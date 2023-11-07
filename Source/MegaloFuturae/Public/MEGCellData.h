@@ -3,23 +3,21 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "MEGCellData.generated.h"
+
 
 UENUM()
 enum class EMEGDistrict
 {
-	Parc,
-	Commercial,
-	Industrie,
-	Dwellings
+	Parc, Commercial, Industry, Dwellings
 };
 
-/**
- * 
- */
-class MEGALOFUTURAE_API FMEG_CellData
+USTRUCT()
+struct MEGALOFUTURAE_API FMEGCellData
 {
+	GENERATED_BODY()
 public:
 
+	UPROPERTY(EditDefaultsOnly)
 	EMEGDistrict DistrictType;
-
 };

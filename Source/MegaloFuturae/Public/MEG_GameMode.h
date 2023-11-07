@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "MEGCardData.h"
 #include "MEG_GameMode.generated.h"
 
 /**
@@ -13,5 +14,6 @@ UCLASS()
 class MEGALOFUTURAE_API AMEG_GameMode : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+	UPROPERTY(EditDefaultsOnly)
+	TArray<FMEGCardData> Cards;
 };
