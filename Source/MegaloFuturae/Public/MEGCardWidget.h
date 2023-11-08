@@ -16,6 +16,18 @@ class MEGALOFUTURAE_API UMEGCardWidget : public UUserWidget
 {
 	GENERATED_BODY()
 	
+public:
+
+	void UpdateCard(int32 CardID);
+
+	virtual void NativeConstruct() override;
+
+protected:
+
+	void FillCellWidgets();
+
+	TMap<enum class EMEGCellPosition, UMEGCellWidget*> CellWidgets;
+
 	UPROPERTY(meta=(BindWidget))
 	UMEGCellWidget* CellUL;
 

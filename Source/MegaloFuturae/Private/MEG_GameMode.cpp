@@ -21,7 +21,6 @@ void AMEG_GameMode::BeginPlay()
 		DrawCard();
 	}
 
-
 }
 
 void AMEG_GameMode::DrawCard()
@@ -31,7 +30,7 @@ void AMEG_GameMode::DrawCard()
 	if (DrawnCardId != INDEX_NONE)
 		DrawCardsId.Add(DrawnCardId);
 
-	UE_LOG(LogTemp, Warning, TEXT("DrawnCard : %d"), DrawnCardId)
+	OnCardHandUpdatedDelegate.ExecuteIfBound();
 }
 
 int AMEG_GameMode::GetAvailableCardId() const

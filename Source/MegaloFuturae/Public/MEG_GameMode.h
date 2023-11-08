@@ -33,10 +33,14 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UUserWidget> HUDWidgetClass;
 
+	DECLARE_DELEGATE(FOnCardHandUpdated)
+	FOnCardHandUpdated OnCardHandUpdatedDelegate;
+
 protected:
 
 	void DrawCard();
 
 	/* Returns a card id from a card which is available. Returns INDEX_NONE if no card left*/
 	int GetAvailableCardId() const;
+
 };
