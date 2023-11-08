@@ -24,5 +24,8 @@ public:
 	~FMEGCardData();
 
 	UPROPERTY(EditDefaultsOnly)
+	int32 CardID;
+
+	UPROPERTY(EditDefaultsOnly)
 	TMap<EMEGCellPosition, FMEGCellData> Cells;
 };
