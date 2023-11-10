@@ -2,6 +2,7 @@
 
 
 #include "MEGCardWidget.h"
+#include "MEGCellWidget.h"
 #include "MEGCardData.h"
 #include "MEG_GameMode.h"
 #include "Kismet/GameplayStatics.h"
@@ -12,7 +13,11 @@ void UMEGCardWidget::UpdateCard(int32 CardID)
 	if (!ensure(Gamemode != nullptr))
 		return;
 
-	
+	for (TPair<EMEGCellPosition, UMEGCellWidget*> cellPair : CellWidgets)
+	{
+		FMEGCardData cardData = Gamemode->Cards[CardID];
+		cellPair.Value->UpdateCell(cardData.Cells[cellPair.Key].DistrictType);
+	}
 }
 
 void UMEGCardWidget::NativeConstruct()
